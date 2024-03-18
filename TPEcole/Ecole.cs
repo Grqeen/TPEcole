@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Classes.ClassesEcole
 {
@@ -27,7 +28,12 @@ namespace Classes.ClassesEcole
 
         public double ancienneteMoyenne()
         {
-            return 111;
+            double somme = 0;
+            foreach ( Contact contact in contacts.Values)
+            {
+                somme += DateTime.Now.Year - contact.AnneeArivee;
+            }
+            return somme/contacts.Count;
 
         }
 
@@ -47,7 +53,17 @@ namespace Classes.ClassesEcole
         public double moyenneEtudiantRegulier()
         {
 
-            return 1111;
+            double somme = 0;
+            int EtudiantCount = 0;
+            foreach ( Contact contact in contacts.Values)
+            {
+                if (contact is EtudiantRegulier)
+                {
+                    somme += ((EtudiantRegulier)contact).NoteMoyenne;
+                }
+                EtudiantCount++;
+            }
+            return somme / EtudiantCount;
 
         }
 

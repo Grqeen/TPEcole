@@ -14,6 +14,8 @@
             this.noteMoyenne = noteMoyenne;
         }
 
+        public double NoteMoyenne { get => noteMoyenne; set => noteMoyenne = value; }
+
         public override string ToString()
         {
             return base.ToString() + "\n\tMoyenne : " + this.noteMoyenne;

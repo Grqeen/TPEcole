@@ -37,18 +37,18 @@ namespace EcoleTLN
             ecole.ajouterContact(contact4);
 
             Console.WriteLine("Parmi " + ecole.nbContacts() + " personnes de l'écoleTLN, " + ecole.nbEtudiant() + " sont des étudiants");
-            //Console.WriteLine("Ils sont à l'école depuis en moyenne " + ecole.ancienneteMoyenne());
+            Console.WriteLine("Ils sont à l'école depuis en moyenne " + ecole.ancienneteMoyenne() +" ans");
             Console.WriteLine("--------- Affichage Tous ----------");
             Console.WriteLine(ecole.afficheTous());
-            //Console.WriteLine(ecole.moyenneEtudiantRegulier());
+            Console.WriteLine("La moyenne des Etudiants Régulier est de " + ecole.moyenneEtudiantRegulier());
             Console.WriteLine("--------- Ajout d'un contact ----------");
             Console.WriteLine("--------- Ajout d'une collection de contacts ----------");
             Console.WriteLine("--------- Vérifications ----------");
             Console.WriteLine("Nb contacts : " + ecole.nbContacts());
-            Console.WriteLine(ecole.existeContact(contact));
-            Console.WriteLine(ecole.existeContact(temp));
-            Console.WriteLine(ecole.existeContact(1409));
-            Console.WriteLine(ecole.existeContact(2222));
+            Console.WriteLine("Le contact existe : " + ecole.existeContact(contact));
+            Console.WriteLine("Le contact existe : " + ecole.existeContact(temp));
+            Console.WriteLine("Le contact existe : " + ecole.existeContact(1409));
+            Console.WriteLine("Le contact existe : " + ecole.existeContact(2222));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using static System.Collections.Specialized.BitVector32;
+﻿using System;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Classes.ClassesEcole
 {
@@ -11,13 +12,26 @@ namespace Classes.ClassesEcole
 
         public int Matricule { get => matricule; set => matricule = value; }
         public string Nom { get => nom; set => nom = value; }
-        public int AnneeArivee { get => anneeArivee; set => anneeArivee = value; }
+        public int AnneeArivee { get => anneeArivee; 
+            set
+            {
+                if (value <= DateTime.Now.Year)
+                {
+                    anneeArivee = value;
+                }
+                else
+                {
+                    throw new Exception("L'année ne peux etre inférieur a l'année actuel");
+                }
+            }
+                
+                }
 
         public Contact(int matricule, string nom, int anneeArivee)
         {
             this.matricule = matricule;
             this.nom = nom;
-            this.anneeArivee = anneeArivee;
+            this.AnneeArivee = anneeArivee;
         }
 
         public override string ToString()
